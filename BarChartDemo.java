@@ -82,17 +82,17 @@ public class BarChartDemo extends ApplicationFrame {
 
         // Populate data for plotting
         final CategoryDataset dataset = createDataset();
-        final JFreeChart chart = createChart(dataset);
+        final JFreeChart chart1 = createChart(dataset);
         
         // Create a Panel for display purposes
-        final ChartPanel chartPanel = new ChartPanel(chart);
+        final ChartPanel chartPanel = new ChartPanel(chart1);
         chartPanel.setPreferredSize(new Dimension(500, 270));
         setContentPane(chartPanel);
         
         // Also dump the jpeg version of the chart to a file
         try {
 	        File f = new File("barchart.jpeg");
-	        ChartUtilities.saveChartAsJPEG(f, chart, 500, 270);
+	        ChartUtilities.saveChartAsJPEG(f, chart1, 500, 270);
         } catch (Exception e){
         	// If any errors occur discard; it's just a placeholder anyways
         	e.printStackTrace();
